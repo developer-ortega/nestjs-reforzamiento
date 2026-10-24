@@ -14,13 +14,13 @@ async function bootstrap() {
   // incluído en los DTOs
   // forbidNonWhiteListed: Retorna bad request 
   // si hay propiedades en el objeto no requeridas 
-  app.useGlobalPipes(
+  app.useGlobalPipes( 
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true
     })
   );
 
-  await app.listen(envs.port || 3000);
+  await app.listen(envs.port);
 }
 await bootstrap();
